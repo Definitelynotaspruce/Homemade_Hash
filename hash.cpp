@@ -4,11 +4,12 @@
 #include <bitset>
 #include <fstream>
 #include <sstream>
+#include "include.h"
 
 std::string GetInput()
 {
     std::string input;
-    input = "1";
+    input = "1gffffffgrtunurtbyyi jsrtg sjkrlj";
     return input;
 }
 
@@ -43,27 +44,28 @@ std::string int_to_hex(int i)
     return stream.str();
 }
 
-std::string HomemadeHash(const std::string &str)
+std::bitset<128> HomemadeHash(const std::string &str)
 {
-    int primeB = 63689;
-    int primeA = 21515;
-    unsigned int hash = 0;
-    std::string hexHash;
+    
+    unsigned int numA = 9933333;
+    unsigned int numB = 1456;
+    unsigned int numC = 0;
+    std::bitset<32> hash[4];
 
-    while (hexHash.size() < 32 )
-    {
-        for (std::size_t i = 0; i < str.size(); ++i)
+    for (std::size_t j = 0; j < sizeof(hash); ++j)
         {
-            hash = hash * str.size() + int(str[i])*primeB;
-            primeB = primeB * int(str[i]) + str[i];
+            for (std::size_t i = 0; i < str.size(); ++i)
+            {
+                numB = numB * str.size() + int(str[i])*numA;
+                numA = numA * int(str[i]) + str[i];
+                numC = numA*numB;
+            }
+            hash[j] = std::bitset<32> (numC);
         }
-        hexHash = hexHash + int_to_hex(hash);
-    }
-
-    std::cout << "size of " << hexHash.size() << std::endl;
-
-    return hexHash;
+    
+    return concat(concat(hash[0],hash[2]), concat(hash[1],hash[3]));
 }
+
 
 int main(int argc, char *argv[])
 {
@@ -79,6 +81,6 @@ int main(int argc, char *argv[])
     default:
         std::cerr << " you failed ";
     }
-    std::cout << HomemadeHash(input) << std::endl;
+    std::cout << (HomemadeHash(input)) << std::endl;
     return 0;
 }
