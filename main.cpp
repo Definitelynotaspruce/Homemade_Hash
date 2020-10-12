@@ -1,0 +1,21 @@
+#include "include/include.h"
+#include "include/Hash.h"
+
+int main(int argc, char *argv[])
+{
+    std::string input;
+    switch (argc)
+    {
+    case 1:
+        input = GetInput();
+        break;
+    case 2:
+        input = ReadInput(argv[1]);
+        break;
+    default:
+        std::cerr << " you failed ";
+    }
+    
+    getBitset4(HomemadeHash(input));
+    return 0;
+}
