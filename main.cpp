@@ -1,5 +1,5 @@
 #include "include/include.h"
-#include "include/Hash.h"
+#include "include/homemade_hash.h"
 
 int main(int argc, char *argv[])
 {
