@@ -14,7 +14,7 @@ std::bitset<4> *getBitset4(std::bitset<128> bit)
     {
         std::cout << std::hex << i.to_ullong();
     }
-    
+    str.erase();  
     return 0;
 }   
 
@@ -22,18 +22,17 @@ std::bitset<4> *getBitset4(std::bitset<128> bit)
 std::bitset<128> HomemadeHash(const std::string &str)
 {
     
-    unsigned int numA = 3131;
-    unsigned int numB = 1373;
+    unsigned int numA = 31;
+    unsigned int numB = 13;
     unsigned int numC = 0;
     std::bitset<32> hash[4];
-
-    for (std::size_t j = 0; j < sizeof(hash); ++j)
+    for (std::size_t j = 0; j < 4; ++j)
         {
             for (std::size_t i = 0; i < str.size(); ++i)
             {
                 numB = numB * str.size() + int(str[i])*numA;
                 numA = numA * int(str[i]) + str[i];
-                numC = numA*numB;
+                numC = numA*numB; 
             }
             hash[j] = std::bitset<32> (numC);
         }

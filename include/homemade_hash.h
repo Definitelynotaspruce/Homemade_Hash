@@ -7,6 +7,8 @@
 #include <bitset>
 #include <vector>
 
+#define chunkOf32Bit 4
+
 std::bitset<128> HomemadeHash(const std::string&);
 std::bitset<4> *getBitset4(std::bitset<128>);
 
