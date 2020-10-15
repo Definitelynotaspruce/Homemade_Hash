@@ -10,7 +10,7 @@
 #define chunkOf32Bit 4
 
 std::bitset<128> HomemadeHash(const std::string&);
-std::bitset<4> *getBitset4(std::bitset<128>);
+std::string getBitset4(std::bitset<128>);
 
 template <size_t N1, size_t N2 >
 std::bitset <N1 + N2> concat( const std::bitset <N1> & b1, const std::bitset <N2> & b2 ) {

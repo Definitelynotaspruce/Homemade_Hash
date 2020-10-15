@@ -16,6 +16,6 @@ int main(int argc, char *argv[])
         std::cerr << " you failed ";
     }
     
-    getBitset4(HomemadeHash(input));
+    std::cout << getBitset4(HomemadeHash(input));
     return 0;
 }

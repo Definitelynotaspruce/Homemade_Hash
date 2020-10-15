@@ -1,6 +1,6 @@
 #include "include/homemade_hash.h"
 
-std::bitset<4> *getBitset4(std::bitset<128> bit)
+std::string getBitset4(std::bitset<128> bit)
 {
     std::string str = bit.to_string();
     std::vector<std::bitset<4>> bitVec;
@@ -10,12 +10,14 @@ std::bitset<4> *getBitset4(std::bitset<128> bit)
         bitVec.push_back(std::bitset<4>(temp));
     }
 
+    std::stringstream ss;
+
     for (auto &&i : bitVec)
-    {
-        std::cout << std::hex << i.to_ullong();
-    }
-    str.erase();  
-    return 0;
+        ss << std::hex << i.to_ullong();
+
+    std::string hash = ss.str();
+     
+    return hash;
 }   
 
 

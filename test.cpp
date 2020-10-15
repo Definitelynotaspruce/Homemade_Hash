@@ -58,28 +58,49 @@ void collision(std::string filename)
 int compareOnBit(std::bitset<128> hash1, std::bitset<128> hash2)
 {
     int sameBit = 0;
-    for (std::size_t i = 0; i < 128; ++i)
+    for (std::size_t i = 0; i < 512; ++i)
         if (hash1[i] == hash2[i])
             sameBit++;
     
     return sameBit;
 }
 
+int compareOnHex(std::string hash1, std::string hash2)
+{
+    int sameHex = 0;
+    for (std::size_t i = 0; i < hash1.length(); ++i)
+    {   
+        if (hash1[i] == hash2[i])
+            sameHex++;
+    }       
+    
+    return sameHex;
+}
+
 void compare(std::string filename)
 {
-    std::string data = ReadInput("textFiles/twoLines.txt");
+    std::string data = ReadInput(filename);
     
     std::stringstream ss(data);
     std::string line1(""), line2("");
     int bitsOnLine = 0;
-    int totalBits = 0;
+    int totalBits = 0, totalHex = 0;
+    int lineCount = 0;
 
-    std::cout << "---\nComparison started---" << std::endl;
+    std::cout << "\n---Comparison started---" << std::endl;
     while (std::getline(ss, line1)) 
     {   
         std::getline(ss, line2);
-        totalBits =+ compareOnBit (HomemadeHash(line1), HomemadeHash(line2));
+        totalBits += compareOnBit (HomemadeHash(line1), HomemadeHash(line2));
+        totalHex += compareOnHex (getBitset4(HomemadeHash(line1)), getBitset4(HomemadeHash(line2)));
+        lineCount++;
     }
+
+    std::cout << "The average difference between two imputs on a BIT level that have 1 simbol diff is " 
+    << (double)totalBits/lineCount*100/512 << "%\n";  
+    std::cout << "The average difference between two imputs on a HEX level that have 1 simbol diff is " 
+    << (double)totalHex/lineCount*100/128 << "%\n";  
+    
     std::cout << "---Comparison ended---" << std::endl;
 
 }
@@ -92,8 +113,8 @@ int main()
         "textFiles/1mil_2.txt", "textFiles/1mil.txt" };
     
     speed(filename[0]);
-    collision(filename[0]);
-    compare(filename[5]);
+    collision("textFiles/2500_10_0.txt");
+    compare("textFiles/2500_10_0.txt");
         
 
     return 0;

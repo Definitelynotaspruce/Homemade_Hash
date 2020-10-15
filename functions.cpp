@@ -13,14 +13,14 @@ std::string ReadInput(std::string fileName)
     std::ifstream data(fileName);
     if(data.fail()) 
         {
-            std::cerr << "ERROR. Unable to open input file 'fileName'" << std::endl;
+            std::cerr << "ERROR. Unable to open input file" << fileName  << std::endl;
             std::exit(0);
         }
     std::string input;
 
-    std::stringstream strStream;
-    strStream << data.rdbuf();         //read the file
-    std::string str = strStream.str(); //str holds the content of the file
+    std::stringstream ss;
+    ss << data.rdbuf();         //read the file
+    std::string str = ss.str(); //str holds the content of the file
 
     data.close();
 
