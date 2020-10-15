@@ -91,15 +91,16 @@ void compare(std::string filename)
     while (std::getline(ss, line1)) 
     {   
         std::getline(ss, line2);
+        std::cout << line1 << " " << line2 << " on line " << lineCount << std::endl;
         totalBits += compareOnBit (HomemadeHash(line1), HomemadeHash(line2));
         totalHex += compareOnHex (getBitset4(HomemadeHash(line1)), getBitset4(HomemadeHash(line2)));
-        lineCount++;
+        lineCount += 2;
     }
 
     std::cout << "The average difference between two imputs on a BIT level that have 1 simbol diff is " 
-    << (double)totalBits/lineCount*100/128 << "%\n";  
+    << 100 - (double)totalBits/lineCount*100/128 << "%\n";  
     std::cout << "The average difference between two imputs on a HEX level that have 1 simbol diff is " 
-    << (double)totalHex/lineCount*100/32 << "%\n";  
+    << 100 - (double)totalHex/lineCount*100/32 << "%\n";  
     
     std::cout << "---Comparison ended---" << std::endl;
 

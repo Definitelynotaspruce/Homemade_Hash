@@ -4,7 +4,7 @@ std::string getBitset4(std::bitset<128> bit)
 {
     std::string str = bit.to_string();
     std::vector<std::bitset<4>> bitVec;
-    for (size_t i = 0; i <= str.size(); i += 4)
+    for (size_t i = 0; i < str.size(); i += 4)
     {
         auto temp = str.substr(i, 4);
         bitVec.push_back(std::bitset<4>(temp));
