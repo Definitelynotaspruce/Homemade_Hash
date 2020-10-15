@@ -58,7 +58,7 @@ void collision(std::string filename)
 int compareOnBit(std::bitset<128> hash1, std::bitset<128> hash2)
 {
     int sameBit = 0;
-    for (std::size_t i = 0; i < 512; ++i)
+    for (std::size_t i = 0; i < 128; ++i)
         if (hash1[i] == hash2[i])
             sameBit++;
     
@@ -97,23 +97,18 @@ void compare(std::string filename)
     }
 
     std::cout << "The average difference between two imputs on a BIT level that have 1 simbol diff is " 
-    << (double)totalBits/lineCount*100/512 << "%\n";  
+    << (double)totalBits/lineCount*100/128 << "%\n";  
     std::cout << "The average difference between two imputs on a HEX level that have 1 simbol diff is " 
-    << (double)totalHex/lineCount*100/128 << "%\n";  
+    << (double)totalHex/lineCount*100/32 << "%\n";  
     
     std::cout << "---Comparison ended---" << std::endl;
 
 }
 
 int main()
-{   
-    std::vector<std::string> filename = 
-    {   "textFiles/konstitucija.txt", "textFiles/emptyFile.txt", 
-        "textFiles/oneSimbol1.txt", "textFiles/oneSimbol2.txt",
-        "textFiles/1mil_2.txt", "textFiles/1mil.txt" };
-    
-    speed(filename[0]);
-    collision("textFiles/2500_10_0.txt");
+{      
+    speed("textFiles/konstitucija.txt");
+    collision("textFiles/2500_10_5.txt");
     compare("textFiles/2500_10_0.txt");
         
 
