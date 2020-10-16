@@ -68,6 +68,6 @@ Result of comparing each bit or hex simbol of the hash (2500 pairs of string lin
 ## Results:
 
 UPDATE: HASH IS WORKING
-The hash is far from usable.
+<br> The hash is far from usable.
 I couldn't determine the reason why it ignored simbol changes in the middle of input string.
 
