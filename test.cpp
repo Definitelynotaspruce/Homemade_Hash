@@ -3,6 +3,7 @@
 #include <chrono>
 #include <sstream>
 #include <unordered_set>
+#include <filesystem>
 
 #include "include/include.h"
 #include "include/homemade_hash.h"
@@ -107,10 +108,17 @@ void compare(std::string filename)
 }
 
 int main()
-{      
-    speed("textFiles/konstitucija.txt");
-    collision("textFiles/2500_1000_499.txt");
-    compare("textFiles/2500_1000_499.txt");
+{     
+      speed("textFiles/konstitucija.txt");
+for (const auto & entry : std::filesystem::directory_iterator("textFiles"))
+    {
+        std::string path = entry.path().u8string();
+       
+    collision(path);
+    compare(path);
+     }
+
+    
         
 
     return 0;

@@ -4,7 +4,7 @@
 
 std::string random_string(std::size_t length)
 {
-    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+}{:><|~`";
+    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi^&*()_+}{:><|~`";
 
     std::string random_string;
 
@@ -20,10 +20,10 @@ int main()
 {
     int stringNum = 2500;
     int lineNum = 1000;
-    int changeNum = 500;
+    int changeNum = 999;
     std::ofstream output( std::to_string(stringNum) + "_" + std::to_string(lineNum) + "_" + std::to_string(changeNum) + ".txt");
 
-    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+}{:><|~`";
+    const std::string CHARACTERS = "jklmnopqrstuvwxyz!@#$%";
 
     
     std::string stringLine = " ";
