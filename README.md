@@ -59,10 +59,25 @@ Collision tests were performed using randomly generated string lines with one ch
 | Lietuva!           | 6fac6f362fc91f56c6cceb56d41d9f56 |
 
 Result of comparing each bit or hex simbol of the hash (2500 pairs of string lines with 10, 100 and 1000 chars)
+
+When different simbol is at start 
  | | 10 | 100 | 1000
 ---------|----------|---------|--
- |hex | 89.9% | 85.4%|80.2%
- |binary | 70% | 68.4%|65.3%
+ |hex | 89.9% | 85.4%|81.2%
+ |binary | 70% | 68.4%|67.3%
+
+ When different simbol is at end
+
+ | | 10 | 100 | 1000
+---------|----------|---------|--
+ |hex | 87.9% | 84.4%|80.2%
+ |binary | 69.2% | 67.4%|65.3%
+
+ When different simbol is in the middle
+ | | 10 | 100 | 1000
+---------|----------|---------|--
+ |hex | 84.9% | 81.3%|73.5%
+ |binary | 68.3% | 66.6%|65%
 
 ## Results:
 
