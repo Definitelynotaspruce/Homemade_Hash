@@ -49,7 +49,7 @@ Speed of this hash was tested with konstitucija.txt file.
 Each line of this text file was hashed in average of 0.027715 seconds.
 
 ## Collision test
-Collision tests were performed using randomly generated string lines with one char difference. (tmainly with 2500 pairs of lines with one different simbol). There has was working fine with most of the data, but sometimes it just ignored the middle char and collisiond appeared.
+Collision tests were performed using randomly generated string lines with one char difference. (tmainly with 2500 pairs of lines with one different simbol). No collisions were found.
 
 ## Simbol by simbol difference 
 
@@ -67,6 +67,7 @@ Result of comparing each bit or hex simbol of the hash (2500 pairs of string lin
 
 ## Results:
 
+UPDATE: HASH IS WORKING
 The hash is far from usable.
 I couldn't determine the reason why it ignored simbol changes in the middle of input string.
 
