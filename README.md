@@ -2,8 +2,8 @@
 Custom Hash created by me for uni project
 ### 128bit
 
-## [v0.2]()
-## [v0.1]()
+## [v0.2](https://github.com/Definitelynotaspruce/Homemade_Hash/releases/tag/v0.2)
+## [v0.1](https://github.com/Definitelynotaspruce/Homemade_Hash/releases/tag/v0.1)
 It's working but it has a loooot of bugs....
 
 ## How to run the program
