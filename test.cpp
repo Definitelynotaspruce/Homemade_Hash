@@ -71,7 +71,7 @@ int compareOnHex(std::string hash1, std::string hash2)
     for (std::size_t i = 0; i < hash1.length(); ++i)
     {   
         if (hash1[i] == hash2[i])
-            sameHex++;
+           sameHex++;
     }       
     
     return sameHex;
@@ -91,7 +91,7 @@ void compare(std::string filename)
     while (std::getline(ss, line1)) 
     {   
         std::getline(ss, line2);
-        std::cout << line1 << " " << line2 << " on line " << lineCount << std::endl;
+        
         totalBits += compareOnBit (HomemadeHash(line1), HomemadeHash(line2));
         totalHex += compareOnHex (getBitset4(HomemadeHash(line1)), getBitset4(HomemadeHash(line2)));
         lineCount += 2;
@@ -109,8 +109,8 @@ void compare(std::string filename)
 int main()
 {      
     speed("textFiles/konstitucija.txt");
-    collision("textFiles/2500_10_5.txt");
-    compare("textFiles/2500_10_0.txt");
+    collision("textFiles/2500_1000_499.txt");
+    compare("textFiles/2500_1000_499.txt");
         
 
     return 0;

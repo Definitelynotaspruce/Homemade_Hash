@@ -4,6 +4,9 @@
 int main(int argc, char *argv[])
 {
     std::string input;
+     
+     if (argv[1] == "a" ) std::cout << "hey" << std::endl;
+
     switch (argc)
     {
     case 1:
@@ -13,7 +16,7 @@ int main(int argc, char *argv[])
         input = ReadInput(argv[1]);
         break;
     default:
-        std::cerr << " you failed ";
+        std::cerr << " Error. No input file. ";
     }
     
     std::cout << getBitset4(HomemadeHash(input));
