@@ -16,7 +16,6 @@ g++ main.cpp functions.cpp hash.cpp
 On a linux machine
 ```
 g++ -o main main.cpp functions.cpp hash.cpp
-<<<<<<< HEAD
 ./hash
 
 ```
