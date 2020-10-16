@@ -18,9 +18,7 @@ On a linux machine
 g++ -o main main.cpp functions.cpp hash.cpp
 <<<<<<< HEAD
 ./hash
-=======
-hash
->>>>>>> 14f65716b37bdc739e2e6476150f3ad16eb0dd63
+
 ```
 If you want to test the hash type *test.cpp* instead of *main.cpp*
 
@@ -55,7 +53,6 @@ Collision tests were performed using randomly generated string lines with one ch
 
 ## Simbol by simbol difference 
 
-<<<<<<< HEAD
 | Input string | output hex                   | 
 | ------------------ | ------------------------------------------------------------ |
 | lietuva            |  dbb182fe87ef162622338da9812f0ec1|
@@ -67,19 +64,15 @@ Collision tests were performed using randomly generated string lines with one ch
  hex | 89.9% | 85.4%|80.2%
  ---------|----------|---------|--
  binary | 70% | 68.4%|65.3%
-=======
+
 Result of comparing each bit or hex simbol of the hash (2500 pairs of string lines with 10, 100 and 1000 chars)
  | | 10 | 100 | 1000
----------|----------|---------|--
+---------|----------|---------|
  |hex | 89.9% | 85.4%|80.2%
  |binary | 70% | 68.4%|65.3%
->>>>>>> 14f65716b37bdc739e2e6476150f3ad16eb0dd63
 
 ## Results:
 
 The hash is far from usable.
-<<<<<<< HEAD
-I couldn't determine the reason why it ignored simbol changes in the middle of input
-=======
 I couldn't determine the reason why it ignored simbol changes in the middle of input string.
->>>>>>> 14f65716b37bdc739e2e6476150f3ad16eb0dd63
+
