@@ -59,15 +59,9 @@ Collision tests were performed using randomly generated string lines with one ch
 | Lietuva            |  ced9329e74b574c6add8bae9bd889101|
 | Lietuva!           | 6fac6f362fc91f56c6cceb56d41d9f56 |
 
- | 10 | 100 | 1000
----------|----------|---------|--
- hex | 89.9% | 85.4%|80.2%
- ---------|----------|---------|--
- binary | 70% | 68.4%|65.3%
-
 Result of comparing each bit or hex simbol of the hash (2500 pairs of string lines with 10, 100 and 1000 chars)
  | | 10 | 100 | 1000
----------|----------|---------|
+---------|----------|---------|--
  |hex | 89.9% | 85.4%|80.2%
  |binary | 70% | 68.4%|65.3%
 
